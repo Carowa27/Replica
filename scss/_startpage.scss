@@ -1,0 +1,33 @@
+@use "variables" as var;
+@use "mixins" as mix;
+
+.landingpage {
+  background-image: url(../assets/negative-space-black-forest-dawn.jpg);
+  background-size: cover;
+  background-position: center;
+  margin: 0;
+  height: 100vh;
+  .header {
+    display: flex;
+    justify-content: end;
+    padding: 10px;
+    .nav {
+    }
+  }
+  &__text {
+    text-align: center;
+    color: #ffffff;
+    p {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.profile {
+  &__image {
+    @include mix.profileframe;
+  }
+  &__info {
+    @include mix.infobox;
+  }
+}

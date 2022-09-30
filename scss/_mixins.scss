@@ -1,0 +1,10 @@
+@mixin infobox {
+  padding: 10px;
+}
+
+@mixin profileframe {
+  border-radius: 50%;
+  width: 60%;
+  height: auto;
+  // box-shadow: 6px 7px 25px 8px rgba(0,0,0,0.51);
+}
