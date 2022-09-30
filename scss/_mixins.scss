@@ -1,10 +1,15 @@
+@use "variables" as var;
+
 @mixin infobox {
-  padding: 10px;
+  padding: 30px;
+  background-color: var.$primary-color;
+  border-radius: 3px;
 }
 
 @mixin profileframe {
   border-radius: 50%;
   width: 60%;
   height: auto;
-  // box-shadow: 6px 7px 25px 8px rgba(0,0,0,0.51);
+  box-shadow: 2px 2px 30px 2px var.$shadow;
+  margin: 5px;
 }

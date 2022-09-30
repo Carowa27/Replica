@@ -11,23 +11,62 @@
     display: flex;
     justify-content: end;
     padding: 10px;
+    background-color: rgb(255, 255, 255, 0.1);
     .nav {
+      a {
+        color: var.$text-light;
+        text-decoration: none;
+        padding: 5px;
+      }
     }
   }
   &__text {
+    //text-align: center;
+    color: var.$text-light;
     text-align: center;
-    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 90%;
+    padding: 30px;
     p {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
+      padding: 10px;
+    }
+    &__icon {
+      margin-top: auto;
+    }
+  }
+}
+.team {
+  padding: 10px;
+  text-align: center;
+
+  .profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__image {
+      @include mix.profileframe;
+    }
+    &__info {
+      @include mix.infobox;
     }
   }
 }
 
-.profile {
-  &__image {
-    @include mix.profileframe;
+.footer {
+  background-color: black;
+  color: var.$text-light;
+  padding: 40px;
+  &__adress {
+    padding: 5px;
   }
-  &__info {
-    @include mix.infobox;
+  &__contact {
+    padding: 5px;
+  }
+  &__social {
+    padding: 5px;
   }
 }
