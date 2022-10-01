@@ -37,7 +37,7 @@
   }
   &__icon {
     color: var.$text-light;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     text-align: center;
     margin-top: auto;
   }
@@ -79,13 +79,14 @@
   }
 }
 main > p:last-child {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
 }
 
 .footer {
   background-color: black;
   color: var.$text-light;
-  padding: 40px;
+  padding: 30px 40px;
+  font-size: 1.5rem;
   @include mix.tablet {
     display: flex;
     justify-content: space-around;
