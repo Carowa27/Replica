@@ -1,15 +1,32 @@
 @use "variables" as var;
 
-@mixin infobox {
-  padding: 30px;
-  background-color: var.$primary-color;
-  border-radius: 3px;
+@mixin tablet {
+  @media screen and (min-width: var.$tablet) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media screen and (min-width: var.$desktop) {
+    @content;
+  }
 }
 
 @mixin profileframe {
   border-radius: 50%;
-  width: 60%;
+  width: 60vw;
   height: auto;
-  box-shadow: 2px 2px 30px 2px var.$shadow;
+  box-shadow: 2px 2px 25px 2px var.$shadow;
   margin: 5px;
+  @include tablet {
+    width: 20vw;
+    height: auto;
+    box-shadow: 2px 2px 15px 2px var.$shadow;
+  }
+}
+
+@mixin infobox {
+  padding: 30px;
+  background-color: var.$primary-color;
+  border-radius: 3px;
+  text-align: left;
 }

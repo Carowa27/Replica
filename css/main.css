@@ -2,6 +2,8 @@
   background-image: url(../assets/negative-space-black-forest-dawn.jpg);
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
+  filter: saturate(150%) brightness(80%);
   margin: 0;
   height: 100vh;
 }
@@ -21,16 +23,18 @@
   text-align: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  height: 90%;
+  height: 80%;
   padding: 30px;
 }
 .landingpage__text p {
   font-size: 1.3rem;
   padding: 10px;
 }
-.landingpage__text__icon {
+.landingpage__icon {
+  color: #ffffff;
+  font-size: 1.3rem;
+  text-align: center;
   margin-top: auto;
 }
 
@@ -38,28 +42,65 @@
   padding: 10px;
   text-align: center;
 }
-.team .profile {
+.team__wall {
+  margin: 10px;
+}
+@media screen and (min-width: 768px) {
+  .team__wall {
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
+.team__wall__profile {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 10px;
 }
-.team .profile__image {
+@media screen and (min-width: 768px) {
+  .team__wall__profile {
+    height: 55vh;
+  }
+}
+.team__wall__profile__image {
   border-radius: 50%;
-  width: 60%;
+  width: 60vw;
   height: auto;
-  box-shadow: 2px 2px 30px 2px #8f8f8f;
+  box-shadow: 2px 2px 25px 2px #8f8f8f;
   margin: 5px;
 }
-.team .profile__info {
+@media screen and (min-width: 768px) {
+  .team__wall__profile__image {
+    width: 20vw;
+    height: auto;
+    box-shadow: 2px 2px 15px 2px #8f8f8f;
+  }
+}
+.team__wall__profile__info {
   padding: 30px;
   background-color: #cccccc;
   border-radius: 3px;
+  text-align: left;
+}
+.team__wall__profile__info .quote-mark {
+  font-size: 2.5rem;
+  font-family: "Courier New", Courier, monospace;
+}
+
+main > p:last-child {
+  font-size: 1.3rem;
 }
 
 .footer {
   background-color: black;
   color: #ffffff;
   padding: 40px;
+}
+@media screen and (min-width: 768px) {
+  .footer {
+    display: flex;
+    justify-content: space-around;
+  }
 }
 .footer__adress {
   padding: 5px;
@@ -69,6 +110,9 @@
 }
 .footer__social {
   padding: 5px;
+}
+.footer__social__icon {
+  padding-right: 10px;
 }
 
 body {
