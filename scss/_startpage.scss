@@ -1,14 +1,17 @@
 @use "variables" as var;
 @use "mixins" as mix;
 
-.landingpage {
+//landing page
+.landing-page {
   background-image: url(../assets/negative-space-black-forest-dawn.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  filter: saturate(150%) brightness(80%) contrast(80%);
+  //filter: saturate(150%) brightness(80%) contrast(80%);
   margin: 0;
   height: 100vh;
+
+  //header
   .header {
     display: flex;
     justify-content: end;
@@ -25,10 +28,16 @@
         @include mix.tablet {
           padding: 15px;
           font-size: 1.3rem;
+          text-decoration: none;
+          transition: text-decoration 0.2s;
+          &:hover {
+            text-decoration: underline;
+          }
         }
       }
     }
   }
+  //landing page text
   &__text {
     color: var.$text-light;
     text-align: center;
@@ -54,6 +63,7 @@
       }
     }
   }
+  //arrow
   &__icon {
     color: var.$text-light;
     font-size: 1.5rem;
@@ -64,6 +74,8 @@
     }
   }
 }
+
+//teampage
 .team {
   padding: 10px;
   text-align: center;
@@ -75,36 +87,38 @@
       justify-content: space-evenly;
       flex-wrap: wrap;
     }
+  }
+  //profile
+  &__profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
 
-    &__profile {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 10px;
+    @include mix.tablet {
+      max-height: 60vh;
+      font-size: 0.85rem;
+      width: 40vw;
+    }
+  }
+  &__image {
+    @include mix.profileframe;
+  }
+  &__info {
+    @include mix.infobox;
 
-      @include mix.tablet {
-        max-height: 60vh;
-        font-size: 0.85rem;
-        width: 40vw;
-      }
-      &__image {
-        @include mix.profileframe;
-      }
-      &__info {
-        @include mix.infobox;
-
-        .quote-mark {
-          font-size: 2.5rem;
-          font-family: "Courier New", Courier, monospace;
-        }
-      }
+    .quote-mark {
+      font-size: 2.5rem;
+      font-family: "Courier New", Courier, monospace;
     }
   }
 }
+
+//arrow
 main > p:last-child {
   font-size: 1.5rem;
 }
-
+//footer
 .footer {
   background-color: black;
   color: var.$text-light;
@@ -123,13 +137,13 @@ main > p:last-child {
   }
   &__social {
     padding: 5px;
-    &__icon {
-      padding-right: 10px;
-    }
-    p {
-      @include mix.tablet {
-        margin-top: 20px;
-      }
+  }
+  &__icon {
+    padding-right: 10px;
+  }
+  p {
+    @include mix.tablet {
+      margin-top: 20px;
     }
   }
 }

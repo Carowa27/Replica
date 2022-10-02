@@ -1,35 +1,39 @@
-.landingpage {
+.landing-page {
   background-image: url(../assets/negative-space-black-forest-dawn.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  filter: saturate(150%) brightness(80%) contrast(80%);
   margin: 0;
   height: 100vh;
 }
-.landingpage .header {
+.landing-page .header {
   display: flex;
   justify-content: end;
   padding: 10px;
   background-color: rgba(255, 255, 255, 0.1);
 }
 @media screen and (min-width: 768px) {
-  .landingpage .header {
+  .landing-page .header {
     padding: 20px;
   }
 }
-.landingpage .header .nav a {
+.landing-page .header .nav a {
   color: #ffffff;
   text-decoration: none;
   padding: 5px;
 }
 @media screen and (min-width: 768px) {
-  .landingpage .header .nav a {
+  .landing-page .header .nav a {
     padding: 15px;
     font-size: 1.3rem;
+    text-decoration: none;
+    transition: text-decoration 0.2s;
+  }
+  .landing-page .header .nav a:hover {
+    text-decoration: underline;
   }
 }
-.landingpage__text {
+.landing-page__text {
   color: #ffffff;
   text-align: center;
   display: flex;
@@ -39,35 +43,35 @@
   padding: 30px;
 }
 @media screen and (min-width: 768px) {
-  .landingpage__text {
+  .landing-page__text {
     height: 77%;
   }
 }
-.landingpage__text h2 {
+.landing-page__text h2 {
   font-size: 2rem;
 }
 @media screen and (min-width: 768px) {
-  .landingpage__text h2 {
+  .landing-page__text h2 {
     font-size: 1.75rem;
   }
 }
-.landingpage__text p {
+.landing-page__text p {
   font-size: 1.7rem;
   padding: 5px;
 }
 @media screen and (min-width: 768px) {
-  .landingpage__text p {
+  .landing-page__text p {
     font-size: 1.3rem;
   }
 }
-.landingpage__icon {
+.landing-page__icon {
   color: #ffffff;
   font-size: 1.5rem;
   text-align: center;
   margin-top: auto;
 }
 @media screen and (min-width: 768px) {
-  .landingpage__icon {
+  .landing-page__icon {
     font-size: 1.3rem;
   }
 }
@@ -86,20 +90,20 @@
     flex-wrap: wrap;
   }
 }
-.team__wall__profile {
+.team__profile {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 10px;
 }
 @media screen and (min-width: 768px) {
-  .team__wall__profile {
+  .team__profile {
     max-height: 60vh;
     font-size: 0.85rem;
     width: 40vw;
   }
 }
-.team__wall__profile__image {
+.team__image {
   border-radius: 50%;
   width: 60vw;
   height: auto;
@@ -107,26 +111,26 @@
   margin: 5px;
 }
 @media screen and (min-width: 768px) {
-  .team__wall__profile__image {
+  .team__image {
     width: 22vw;
     height: auto;
   }
 }
-.team__wall__profile__info {
+.team__info {
   padding: 30px;
   background-color: #cccccc;
   border-radius: 3px;
   text-align: left;
 }
 @media screen and (min-width: 768px) {
-  .team__wall__profile__info {
+  .team__info {
     max-width: 25vw;
     margin: 15px 50px 0 50px;
     padding: 20px 20px 30px 20px;
     line-height: 0.5rem;
   }
 }
-.team__wall__profile__info .quote-mark {
+.team__info .quote-mark {
   font-size: 2.5rem;
   font-family: "Courier New", Courier, monospace;
 }
@@ -157,11 +161,11 @@ main > p:last-child {
 .footer__social {
   padding: 5px;
 }
-.footer__social__icon {
+.footer__icon {
   padding-right: 10px;
 }
 @media screen and (min-width: 768px) {
-  .footer__social p {
+  .footer p {
     margin-top: 20px;
   }
 }
