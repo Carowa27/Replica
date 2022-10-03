@@ -14,11 +14,11 @@ body {
 .landing-page .header {
   background-color: rgba(255, 255, 255, 0.2);
   position: absolute;
-  width: 100vw;
+  width: 100%;
 }
 @media screen and (min-width: 768px) {
   .landing-page .header {
-    padding: 20px;
+    padding: 10px 0;
   }
 }
 .landing-page__text {
@@ -166,13 +166,13 @@ main > p:last-child {
   max-height: 0;
   transition: max-height 0.5s ease;
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 768px) {
   .nav .menu {
     display: flex;
     flex-direction: row;
     justify-content: end;
     max-height: none;
-    padding-right: 30px;
+    padding-right: 10px;
   }
 }
 .nav .menu-icon {
@@ -181,7 +181,7 @@ main > p:last-child {
   justify-content: end;
   cursor: pointer;
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 768px) {
   .nav .menu-icon {
     display: none;
   }
