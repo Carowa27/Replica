@@ -25,10 +25,10 @@
 
 @mixin infobox {
   padding: 30px;
+  //line-height: 0.5rem;
   background-color: var.$primary-color;
   border-radius: 3px;
   text-align: left;
-
   @include tablet {
     max-width: 25vw;
     margin: 15px 50px 0 50px;
