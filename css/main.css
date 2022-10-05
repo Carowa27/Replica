@@ -10,16 +10,6 @@ body {
   height: 100vh;
   position: relative;
 }
-.landing-page .header {
-  background-color: rgba(255, 255, 255, 0.2);
-  position: absolute;
-  width: 100%;
-}
-@media screen and (min-width: 768px) {
-  .landing-page .header {
-    padding: 10px 0;
-  }
-}
 .landing-page__text {
   color: #ffffff;
   text-align: center;
@@ -29,20 +19,20 @@ body {
   height: 90%;
   padding: 0 30px;
 }
-.landing-page__text h2 {
+.landing-page__text--lg-txt {
   font-size: 2rem;
 }
 @media screen and (min-width: 768px) {
-  .landing-page__text h2 {
+  .landing-page__text--lg-txt {
     font-size: 1.75rem;
   }
 }
-.landing-page__text p {
+.landing-page__text--md-txt {
   font-size: 1.7rem;
   padding: 5px;
 }
 @media screen and (min-width: 768px) {
-  .landing-page__text p {
+  .landing-page__text--md-txt {
     font-size: 1.3rem;
   }
 }
@@ -59,6 +49,134 @@ body {
 }
 .landing-page__icon--link {
   color: #ffffff;
+}
+
+.menu {
+  list-style: none;
+  font-size: 1.2rem;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-height: 0;
+}
+@media screen and (min-width: 768px) {
+  .menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    max-height: none;
+    padding-right: 10px;
+  }
+}
+.menu__icon {
+  padding: 20px 15px;
+  display: flex;
+  justify-content: end;
+  cursor: pointer;
+}
+@media screen and (min-width: 768px) {
+  .menu__icon {
+    display: none;
+  }
+}
+.menu__btn {
+  display: none;
+}
+.menu__btn:checked ~ .menu {
+  max-height: 200px;
+  animation: menu 1s forwards;
+  padding-bottom: 10px;
+}
+@media screen and (min-width: 768px) {
+  .menu__btn:checked ~ .menu {
+    animation: none;
+    padding-bottom: 0px;
+  }
+}
+.menu__btn:checked ~ .menu-icon .nav-icon {
+  background-color: transparent;
+}
+.menu__btn:checked ~ .menu-icon .nav-icon::before {
+  transform: rotate(-135deg);
+  top: 0;
+}
+.menu__btn:checked ~ .menu-icon .nav-icon::after {
+  transform: rotate(135deg);
+  top: 0;
+}
+
+.nav__icon {
+  background: #ffffff;
+  height: 4px;
+  width: 25px;
+  border-radius: 4px;
+  position: relative;
+  transition: background 0.1s ease-out;
+}
+.nav__icon::before {
+  background: #ffffff;
+  content: "";
+  display: block;
+  border-radius: 4px;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 8px;
+  transition: all 0.2s linear;
+}
+.nav__icon::after {
+  background: #ffffff;
+  content: "";
+  display: block;
+  border-radius: 4px;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: -8px;
+  transition: all 0.2s linear;
+}
+.nav__link {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 5px;
+  font-size: 1.5rem;
+}
+@media screen and (min-width: 768px) {
+  .nav__link {
+    padding: 15px;
+    font-size: 1.3rem;
+  }
+  .nav__link:hover {
+    text-decoration: underline;
+  }
+}
+
+@keyframes menu {
+  0% {
+    max-height: 0px;
+    opacity: 0%;
+  }
+  50% {
+    max-height: 200px;
+    opacity: 0%;
+  }
+  100% {
+    max-height: 200px;
+    opacity: 100%;
+  }
+}
+.header {
+  background-color: rgba(255, 255, 255, 0.2);
+  position: absolute;
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .header {
+    padding: 10px 0;
+  }
 }
 
 .team {
@@ -81,15 +199,15 @@ body {
   align-items: center;
   padding: 10px;
 }
-.team__profile h4 {
-  font-size: 1rem;
-}
 @media screen and (min-width: 768px) {
   .team__profile {
     max-height: auto;
     font-size: 0.85rem;
     width: 40vw;
   }
+}
+.team__name {
+  font-size: 1rem;
 }
 .team__image {
   border-radius: 50%;
@@ -109,12 +227,14 @@ body {
   background-color: #d7d6d6;
   border-radius: 3px;
   text-align: left;
+  font-size: 1.2rem;
 }
 @media screen and (min-width: 768px) {
   .team__info {
     max-width: 23vw;
     margin: 15px 50px 0 50px;
     padding: 20px 30px 30px 20px;
+    font-size: 1rem;
   }
 }
 .team__info .bi::before {
@@ -125,21 +245,8 @@ body {
   transform: rotate(180deg);
   display: inline-block;
 }
-.team__info--text {
-  line-height: 0.8;
-  font-size: 1.2rem;
-}
-@media screen and (min-width: 768px) {
-  .team__info--text {
-    line-height: 0.5;
-    font-size: 1rem;
-  }
-}
 .team__icon--link {
   color: black;
-}
-
-main > p:last-child {
   font-size: 1.5rem;
 }
 
@@ -168,133 +275,6 @@ main > p:last-child {
 }
 .footer__icon {
   padding-right: 10px;
-}
-@media screen and (min-width: 768px) {
-  .footer p {
-    margin-top: 20px;
-  }
-}
-
-.nav .menu {
-  list-style: none;
-  font-size: 1.2rem;
-  padding: 0;
-  margin: 0;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-height: 0;
-}
-@keyframes menu {
-  0% {
-    max-height: 0px;
-    opacity: 0%;
-  }
-  50% {
-    max-height: 200px;
-    opacity: 0%;
-  }
-  100% {
-    max-height: 200px;
-    opacity: 100%;
-  }
-}
-@media screen and (min-width: 768px) {
-  .nav .menu {
-    display: flex;
-    flex-direction: row;
-    justify-content: end;
-    max-height: none;
-    padding-right: 10px;
-  }
-}
-.nav .menu-icon {
-  padding: 20px 15px;
-  display: flex;
-  justify-content: end;
-  cursor: pointer;
-}
-@media screen and (min-width: 768px) {
-  .nav .menu-icon {
-    display: none;
-  }
-}
-.nav .menu-btn {
-  display: none;
-}
-.nav .menu-btn:checked ~ .menu {
-  max-height: 200px;
-  animation: menu 1s forwards;
-}
-@media screen and (min-width: 768px) {
-  .nav .menu-btn:checked ~ .menu {
-    animation: none;
-  }
-}
-.nav .menu-btn:checked ~ .menu-icon .nav-icon {
-  background-color: transparent;
-}
-.nav .menu-btn:checked ~ .menu-icon .nav-icon::before {
-  transform: rotate(-135deg);
-  top: 0;
-}
-.nav .menu-btn:checked ~ .menu-icon .nav-icon::after {
-  transform: rotate(135deg);
-  top: 0;
-}
-.nav .nav-icon {
-  background: #ffffff;
-  height: 4px;
-  width: 25px;
-  border-radius: 4px;
-  position: relative;
-  transition: background 0.1s ease-out;
-}
-.nav .nav-icon::before {
-  background: #ffffff;
-  content: "";
-  display: block;
-  border-radius: 4px;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  top: 8px;
-  transition: all 0.2s linear;
-}
-.nav .nav-icon::after {
-  background: #ffffff;
-  content: "";
-  display: block;
-  border-radius: 4px;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  top: -8px;
-  transition: all 0.2s linear;
-}
-.nav a {
-  color: #ffffff;
-  text-decoration: none;
-  padding: 5px;
-  font-size: 1.5rem;
-}
-@media screen and (min-width: 768px) {
-  .nav a {
-    padding: 15px;
-    font-size: 1.3rem;
-  }
-  .nav a:hover {
-    text-decoration: underline;
-  }
-}
-.nav li:last-child {
-  padding-bottom: 10px;
-}
-@media screen and (min-width: 768px) {
-  .nav li:last-child {
-    padding-bottom: 0px;
-  }
 }
 
 /*# sourceMappingURL=main.css.map */

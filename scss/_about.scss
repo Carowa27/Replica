@@ -1,1 +1,58 @@
-@use "card";
+@use "variables" as var;
+@use "mixins" as mix;
+
+//teampage
+.team {
+  padding: 10px;
+  text-align: center;
+
+  &__wall {
+    margin: 10px;
+    @include mix.tablet {
+      display: flex;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+    }
+  }
+  //profile
+  &__profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+
+    @include mix.tablet {
+      max-height: auto;
+      font-size: 0.85rem;
+      width: 40vw;
+    }
+  }
+  &__name {
+    font-size: 1rem;
+    // behöver jag denna?
+  }
+  &__image {
+    @include mix.profileframe;
+  }
+  &__info {
+    @include mix.infobox;
+
+    .bi::before {
+      font-weight: bolder !important;
+    }
+
+    .quote-mark {
+      font-size: 2.5rem;
+      transform: rotate(180deg);
+      display: inline-block;
+      //font-family: "Courier New", Courier, monospace;
+    }
+  }
+  //arrow blk
+  &__icon {
+    &--link {
+      color: black;
+      font-size: 1.5rem;
+    }
+  }
+}
