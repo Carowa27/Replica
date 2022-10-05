@@ -13,11 +13,24 @@
     flex-direction: column;
     align-items: center;
 
-    //display: none;
-    //transition: display 3s ease-out;
-
     max-height: 0;
-    transition: max-height 0.5s ease;
+    //transition: max-height 0.3s ease-out;
+    //animation: menu 1s forwards;
+
+    @keyframes menu {
+      0% {
+        max-height: 0px;
+        opacity: 0%;
+      }
+      50% {
+        max-height: 200px;
+        opacity: 0%;
+      }
+      100% {
+        max-height: 200px;
+        opacity: 100%;
+      }
+    }
 
     @include mix.tablet {
       display: flex;
@@ -25,7 +38,6 @@
       justify-content: end;
       max-height: none;
       padding-right: 10px;
-      //clear: none;
     }
 
     &-icon {
@@ -36,19 +48,18 @@
 
       @include mix.tablet {
         display: none;
-        //padding?
       }
     }
 
     &-btn {
       display: none;
     }
-    &-btn:active {
-      background-color: transparent;
-    }
     &-btn:checked ~ .menu {
       max-height: 200px;
-      //display: flex;
+      animation: menu 1s forwards;
+      @include mix.tablet {
+        animation: none;
+      }
     }
     &-btn:checked ~ .menu-icon .nav-icon {
       background-color: transparent;
@@ -90,21 +101,27 @@
       width: 100%;
       position: absolute;
       top: -8px;
-      transition: transform 0.2s linear, top 0.2s linear;
+      transition: all 0.2s linear;
     }
   }
   a {
     color: var.$text-light;
     text-decoration: none;
     padding: 5px;
+    font-size: 1.5rem;
+
     @include mix.tablet {
       padding: 15px;
       font-size: 1.3rem;
-      text-decoration: none;
-      transition: text-decoration 0.2s;
       &:hover {
         text-decoration: underline;
       }
+    }
+  }
+  li:last-child {
+    padding-bottom: 10px;
+    @include mix.tablet {
+      padding-bottom: 0px;
     }
   }
 }

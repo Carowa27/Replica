@@ -8,7 +8,7 @@
   background-position: center;
   background-repeat: no-repeat;
   //filter: saturate(150%) brightness(80%) contrast(80%);
-  margin: 0;
+  //margin: 0;
   height: 100vh;
   position: relative;
 
@@ -17,7 +17,7 @@
     //display: flex;
     //justify-content: end;
     //padding: 10px;
-    background-color: rgb(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.2);
     position: absolute;
     width: 100%;
     @include mix.tablet {
@@ -33,6 +33,7 @@
     justify-content: center;
     height: 90%;
     padding: 0 30px;
+
     h2 {
       font-size: 2rem;
       @include mix.tablet {
@@ -54,7 +55,10 @@
     text-align: center;
     margin-top: auto;
     @include mix.tablet {
-      font-size: 1.3rem;
+      font-size: 1.5rem;
+    }
+    &--link {
+      color: var.$text-light;
     }
   }
 }
@@ -79,8 +83,12 @@
     align-items: center;
     padding: 10px;
 
+    h4 {
+      font-size: 1rem;
+    }
+
     @include mix.tablet {
-      max-height: 60vh;
+      max-height: auto;
       font-size: 0.85rem;
       width: 40vw;
     }
@@ -91,12 +99,27 @@
   &__info {
     @include mix.infobox;
 
+    .bi::before {
+      font-weight: bolder !important;
+    }
+
     .quote-mark {
       font-size: 2.5rem;
       transform: rotate(180deg);
       display: inline-block;
       //font-family: "Courier New", Courier, monospace;
     }
+    &--text {
+      line-height: 0.8;
+      font-size: 1.2rem;
+      @include mix.tablet {
+        line-height: 0.5;
+        font-size: 1rem;
+      }
+    }
+  }
+  &__icon--link {
+    color: black;
   }
 }
 
@@ -108,12 +131,14 @@ main > p:last-child {
 .footer {
   background-color: black;
   color: var.$text-light;
-  padding: 30px 40px;
+  padding: 30px 0px 30px 60px;
   font-size: 1.5rem;
+
   @include mix.tablet {
     display: flex;
     justify-content: space-around;
     font-size: 1rem;
+    padding: 0px;
   }
   &__adress {
     padding: 5px;
