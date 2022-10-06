@@ -19,32 +19,32 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 90%;
+    height: 100%;
     padding: 0 30px;
 
     &--lg-txt {
-      font-size: 2rem;
+      font-size: var.$header-mobile;
       @include mix.tablet {
-        font-size: 1.75rem;
+        font-size: var.$header-desktop;
       }
     }
     &--md-txt {
-      font-size: 1.7rem;
+      font-size: var.$md-txt-mobile;
       padding: 5px;
       @include mix.tablet {
-        font-size: 1.3rem;
+        font-size: var.$md-txt-desktop;
       }
     }
   }
   //arrow white
   &__icon {
     color: var.$text-light;
-    font-size: 1.5rem;
+    font-size: var.$arrow-size;
     text-align: center;
-    margin-top: auto;
-    @include mix.tablet {
-      font-size: 1.5rem;
-    }
+    position: absolute;
+    top: 90%;
+    width: 100%;
+    //margin-top: auto;
     &--link {
       color: var.$text-light;
     }
