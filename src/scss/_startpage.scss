@@ -7,8 +7,6 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  //filter: saturate(150%) brightness(80%) contrast(80%);
-  //margin: 0;
   height: 100vh;
   position: relative;
 
@@ -44,7 +42,6 @@
     position: absolute;
     top: 90%;
     width: 100%;
-    //margin-top: auto;
     &--link {
       color: var.$text-light;
     }

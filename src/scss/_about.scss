@@ -36,7 +36,6 @@
   }
   &__name {
     margin: 0;
-    // behöver jag denna?
   }
   &__image {
     @include mix.profileframe;
@@ -52,7 +51,6 @@
       font-size: var.$quote-size;
       transform: rotate(180deg);
       display: inline-block;
-      //font-family: "Courier New", Courier, monospace;
     }
   }
   //arrow blk
