@@ -47,14 +47,14 @@
   }
   &__btn:checked ~ .menu__icon .nav__icon {
     background-color: transparent;
-    animation: blu 0.2s linear;
+    animation: blu 0.3s linear;
   }
   @keyframes blu {
     0% {
       background-color: rgb(161, 255, 238);
     }
     25% {
-      background-color: var.$text-light;
+      background-color: transparent;
     }
     100% {
       background-color: transparent;
@@ -87,7 +87,7 @@
       width: 100%;
       position: absolute;
       top: 10px;
-      transition: all 0.2s linear;
+      transition: transform 0.2s linear, top 0.2s linear;
     }
     &::after {
       background-color: var.$text-light;
