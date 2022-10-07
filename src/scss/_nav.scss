@@ -15,6 +15,7 @@
   opacity: 0;
   overflow: hidden;
   transition: opacity 1s ease-in-out;
+  //transition: max-height 0.2s ease-out;
 
   @include mix.tablet {
     display: flex;
@@ -40,11 +41,14 @@
   &__btn {
     display: none;
   }
+  //&__btn:active {
+  //  background-color: transparent;
+  //}
   &__btn:checked ~ .menu {
-    max-height: 200px;
+    max-height: 300px;
     padding-bottom: 10px;
     opacity: 1;
-    height: auto;
+    //height: auto;
   }
   &__btn:checked ~ .menu-icon .nav-icon {
     background-color: transparent;
@@ -87,7 +91,7 @@
       width: 100%;
       position: absolute;
       top: -10px;
-      transition: all 0.2s linear;
+      transition: transform 0.2s linear, top 0.2s linear;
     }
   }
   &__link {
