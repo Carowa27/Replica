@@ -15,7 +15,6 @@
   opacity: 0;
   overflow: hidden;
   transition: opacity 1s ease-in-out;
-  //transition: max-height 0.2s ease-out;
 
   @include mix.tablet {
     display: flex;
@@ -41,38 +40,46 @@
   &__btn {
     display: none;
   }
-  //&__btn:active {
-  //  background-color: transparent;
-  //}
   &__btn:checked ~ .menu {
     max-height: 300px;
     padding-bottom: 10px;
     opacity: 1;
-    //height: auto;
   }
-  &__btn:checked ~ .menu-icon .nav-icon {
+  &__btn:checked ~ .menu__icon .nav__icon {
     background-color: transparent;
+    animation: blu 0.2s linear;
   }
-  &__btn:checked ~ .menu-icon .nav-icon::before {
+  @keyframes blu {
+    0% {
+      background-color: rgb(161, 255, 238);
+    }
+    25% {
+      background-color: var.$text-light;
+    }
+    100% {
+      background-color: transparent;
+    }
+  }
+  &__btn:checked ~ .menu__icon .nav__icon::before {
     transform: rotate(-135deg);
     top: 0;
   }
-  &__btn:checked ~ .menu-icon .nav-icon::after {
+  &__btn:checked ~ .menu__icon .nav__icon::after {
     transform: rotate(135deg);
     top: 0;
   }
 }
 .nav {
   &__icon {
-    background: var.$text-light;
+    background-color: var.$text-light;
     height: 5px;
     width: 30px;
     border-radius: 4px;
     position: relative;
-    transition: background 0.1s ease-out;
+    //transition: background-color 0.1s ease-out;
 
     &::before {
-      background: var.$text-light;
+      background-color: var.$text-light;
       content: "";
       display: block;
       border-radius: 4px;
@@ -83,7 +90,7 @@
       transition: all 0.2s linear;
     }
     &::after {
-      background: var.$text-light;
+      background-color: var.$text-light;
       content: "";
       display: block;
       border-radius: 4px;
